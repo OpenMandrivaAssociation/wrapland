@@ -15,6 +15,8 @@ BuildRequires:  cmake(KF6)
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Concurrent)
 BuildRequires:  cmake(Qt6Gui)
+BuildRequires:  cmake(Qt6Test)
+BuildRequires:  qt6-qtbase-theme-gtk3
 BuildRequires:  fdupes
 BuildRequires:  cmake(Microsoft.GSL)
 BuildRequires:  pkgconfig
