@@ -61,6 +61,7 @@ Client and Server library wrapper for the Wayland libraries.
 
 %files devel
 %{_includedir}/Wrapland/
+%{_includedir}/wrapland_version.h
 %{_libdir}/cmake/Wrapland/
 %{_libdir}/libWraplandClient.so
 %{_libdir}/libWraplandServer.so
