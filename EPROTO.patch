@@ -1,0 +1,13 @@
+diff --git a/src/client/connection_thread.cpp b/src/client/connection_thread.cpp
+index 884eae55..59198ec8 100644
+--- a/src/client/connection_thread.cpp
++++ b/src/client/connection_thread.cpp
+@@ -289,7 +289,7 @@ int ConnectionThread::error() const
+ 
+ bool ConnectionThread::hasProtocolError() const
+ {
+-    return d->error = EPROTO;
++    return d->error == EPROTO;
+ }
+ 
+ int ConnectionThread::protocolError() const
