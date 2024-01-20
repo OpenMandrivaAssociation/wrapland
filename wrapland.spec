@@ -23,7 +23,6 @@ BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(wayland-server)
 BuildRequires:  pkgconfig(wayland-scanner)
-BuildRequires:  qt6-gui-private-devel
 Provides:       libWraplandClient = %{version}
 
 %description
