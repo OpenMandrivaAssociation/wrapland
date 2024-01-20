@@ -1,3 +1,4 @@
+%define major 0
 %define commit da46a25440ac4615daf7d7816f51b18cd65909df
 
 Name:           wrapland
@@ -54,12 +55,12 @@ Client and Server library wrapper for the Wayland libraries.
 
 %files
 %license COPYING.LIB
-#{_kf6_debugdir}/*.categories
-#{_kf6_libdir}/libWraplandClient.so.*
-#{_kf6_libdir}/libWraplandServer.so.*
+%{_datadir}/qlogging-categories6/org_kde_wrapland.categories
+%{_libdir}/libWraplandClient.so.%{major}*
+%{_libdir}/libWraplandServer.so.%{major}*
 
 %files devel
-#{_includedir}/*
-#{_kf6_libdir}/cmake/Wrapland/
-#{_kf6_libdir}/libWraplandClient.so
-#{_kf6_libdir}/libWraplandServer.so
+%{_includedir}/Wrapland/
+%{_libdir}/cmake/Wrapland/
+%{_libdir}/libWraplandClient.so
+%{_libdir}/libWraplandServer.so
