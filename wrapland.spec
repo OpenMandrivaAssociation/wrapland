@@ -1,14 +1,15 @@
 %define major 0
-%define commit da46a25440ac4615daf7d7816f51b18cd65909df
+#define commit da46a25440ac4615daf7d7816f51b18cd65909df
 
 Name:           wrapland
-Version:        0.527.80
+Version:        0.601.0
 Release:        1
 Summary:        C++ wrapper for the libwayland client and server API
 License:        LGPL-2.1-or-later
 Group:          Development/Libraries/KDE
-URL:            https://gitlab.com/kwinft/%{name}
-Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
+URL:            https://github.com/winft/wrapland/
+Source0:        https://github.com/winft/wrapland/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
+#Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
 Patch1:         EPROTO.patch
 
 BuildRequires:  cmake(Qt6)
@@ -44,7 +45,7 @@ Requires:       cmake(Microsoft.GSL)
 Client and Server library wrapper for the Wayland libraries.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %cmake
