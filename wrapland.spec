@@ -10,15 +10,14 @@ Group:          Development/Libraries/KDE
 URL:            https://github.com/winft/wrapland/
 Source0:        https://github.com/winft/wrapland/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 #Source:         %{url}/-/archive/%{commit}/%{name}-%{commit}.tar.bz2
-Patch1:         EPROTO.patch
 
+BuildSystem:	cmake
 BuildRequires:  cmake(Qt6)
 BuildRequires:  cmake(KF6)
 BuildRequires:  cmake(Qt6Core)
 BuildRequires:  cmake(Qt6Concurrent)
 BuildRequires:  cmake(Qt6Gui)
 BuildRequires:  cmake(Qt6Test)
-BuildRequires:  qt6-qtbase-theme-gtk3
 BuildRequires:  fdupes
 BuildRequires:  cmake(Microsoft.GSL)
 BuildRequires:  pkgconfig
@@ -28,6 +27,10 @@ BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(wayland-server)
 BuildRequires:  pkgconfig(wayland-scanner)
 Provides:       libWraplandClient = %{version}
+
+%patchlist
+wrapland-compile.patch
+EPROTO.patch
 
 %description
 Wrapland is a Qt/C++ library that wraps and mediates the libwayland
@@ -43,16 +46,6 @@ Requires:       cmake(Microsoft.GSL)
 
 %description devel
 Client and Server library wrapper for the Wayland libraries.
-
-%prep
-%autosetup -p1 -n %{name}-%{version}
-
-%build
-%cmake
-%make_build
-
-%install
-%make_install -C build
 
 %files
 %license COPYING.LIB
