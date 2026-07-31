@@ -2,7 +2,7 @@
 #define commit da46a25440ac4615daf7d7816f51b18cd65909df
 
 Name:           wrapland
-Version:        0.601.0
+Version:        0.602.0
 Release:        1
 Summary:        C++ wrapper for the libwayland client and server API
 License:        LGPL-2.1-or-later
@@ -29,7 +29,7 @@ BuildRequires:  pkgconfig(wayland-scanner)
 Provides:       libWraplandClient = %{version}
 
 %patchlist
-wrapland-compile.patch
+# dropped (no longer applies): wrapland-compile.patch
 EPROTO.patch
 
 %description
